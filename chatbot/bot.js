@@ -16,14 +16,14 @@ client.on('message', async (message) => {
 
     if (greetings.includes(body)) {
         await client.sendMessage(message.from, 'Olá, seja bem-vindo(a)!\nComo posso te ajudar?');
-        await client.sendMessage(message.from, 'Segue abaixo as opções:\n1. Dúvidas em relação a: matéria e aulas, horários e professor.\n2. Dúvidas sobre auxílio estudantil: auxílio alimentação, auxílio moradia (intermunicipal) e auxílio transporte.\n3. Outros\n0. Fim do atendimento');
+        await client.sendMessage(message.from, 'Segue abaixo as opções:\n1. Dúvidas em relação a: matéria e aulas, horários e professor.\n2. Dúvidas sobre auxílio estudantil: auxílio alimentação, auxílio moradia e auxílio transporte.\n3. Outros\n0. Fim do atendimento');
     } else if (['1', '2', '3', '0'].includes(body)) {
         switch (body) {
             case '1':
                 await client.sendMessage(message.from, 'Escolha a opção da sua dúvida:\na. Matéria e aulas\nb. Horários\nc. Professor');
                 break;
             case '2':
-                await client.sendMessage(message.from, 'Escolha a opção da sua dúvida:\nd. Auxílio alimentação e auxílio moradia\ne. Auxílio transporte (intermunicipal)');
+                await client.sendMessage(message.from, 'Escolha a opção da sua dúvida:\nd. Auxílio alimentação e auxílio moradia\ne. Auxílio transporte');
                 break;
             case '3':
                 await client.sendMessage(message.from, 'Alguns links importantes');
@@ -55,7 +55,7 @@ client.on('message', async (message) => {
                 break;
             case 'e':
                 await client.sendMessage(message.from, 'Sobre cartão de transporte');
-                await client.sendMessage(message.from, 'Para mais informações entre em contato com a Diretoria de Extensão(DIEX) link: https://api.whatsapp.com/send?phone=556581630068');
+                await client.sendMessage(message.from, 'Para transporte municipal : Diretoria de Extensão (DIEX) link: https://api.whatsapp.com/send?phone=556581630068 \nPara auxilio transporte intermunicipal : Coordenação de Assistência Estudantil (CAE) link: https://api.whatsapp.com/send?phone=5565993098260');
                 break;
             default:
                 await client.sendMessage(message.from, 'Sinto muito, mas parece que não tenho a opção que você está procurando neste momento. Estou em constante evolução,espero poder ajudá-lo melhor no futuro. Você tem alguma outra pergunta ou preocupação que eu possa ajudar a resolver?');
